@@ -14,10 +14,10 @@ import (
 */
 
 func main() {
-	//启动一个默认路由
 	router := gin.Default() // 创建带有默认中间件的 Gin 路由器
 	router.GET("/user/:name", func(c *gin.Context) {
-		name := c.Param("name")
+		name := c.Param("name") //从路径中获取参数
+		//此handler将匹配/user/xxx
 		c.JSON(http.StatusOK, gin.H{
 			"message": "hello," + name + "!",
 		})
